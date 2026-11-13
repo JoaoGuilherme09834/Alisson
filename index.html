@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo HTML, CSS e DOM</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: lightblue;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: lightgray;
+            padding: 15px;
+        }
+
+        main {
+            background-color: white;
+            padding: 20px;
+            min-height: 200px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Meu Site</h1>
+    </header>
+
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+    </nav>
+
+    <main id="conteudo">
+        <!-- O JavaScript criará os elementos aqui -->
+    </main>
+
+    <script>
+        // Selecionar os elementos da página
+        const main = document.getElementById("conteudo");
+        const header = document.querySelector("header");
+        const nav = document.querySelector("nav");
+        const body = document.body;
+
+        // MODIFICAR O CSS PELO JAVASCRIPT
+        body.style.backgroundColor = "#e8f5e9";
+        body.style.fontFamily = "Arial, sans-serif";
+
+        header.style.backgroundColor = "#sdf5e20";
+        header.style.color = "white";
+        header.style.textAlign = "center";
+
+        nav.style.backgroundColor = "#a5d6a7";
+        nav.style.textAlign = "center";
+
+        main.style.backgroundColor = "#f1f8e9";
+        main.style.textAlign = "center";
+        main.style.padding = "30px";
+        main.style.color = "#263238";
+
+        // CRIAR UM TÍTULO PRINCIPAL
+        const titulo = document.createElement("h1");
+        titulo.textContent = "Beleza Natural do Paraná";
+        titulo.style.color = "#1b5e20";
+        titulo.style.fontSize = "32px";
+        main.appendChild(titulo);
+
+        const subtitulo = document.createElement("h2");
+        subtitulo.textContent = "Cataratas do Iguaçu";
+        subtitulo.style.color = "#2e7d32";
+        main.appendChild(subtitulo);
+
+        const paragrafo = document.createElement("p");
+        paragrafo.textContent =
+            "As Cataratas do Iguaçu são uma das maiores maravilhas naturais do Brasil. Localizadas em Foz do Iguaçu, no estado do Paraná, elas encantam visitantes do mundo inteiro com suas enormes quedas d'água.";
+        main.appendChild(paragrafo);
+
+        const imagem = document.createElement("img");
+        imagem.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXF_mrfdPg_Yv_trirEVxZNQGSlwe_f4Jh2t4cWKjyPoXkaYDa72bUGfs&s=10";
+        imagem.alt = "Cataratas do Iguaçu";
+        imagem.style.width = "80%";
+        imagem.style.maxWidth = "600px";
+        imagem.style.borderRadius = "15px";
+        imagem.style.margin = "20px auto";
+        imagem.style.display = "block";
+        main.appendChild(imagem);
+
+        const paragrafo2 = document.createElement("p");
+        paragrafo2.textContent =
+            "O Parque Nacional do Iguaçu abriga essa incrível paisagem, formada por centenas de quedas d'água cercadas pela Mata Atlântica. O local é um importante patrimônio natural e oferece uma experiência inesquecível de contato com a natureza.";
+        main.appendChild(paragrafo2);
+
+        const tituloLista = document.createElement("h2");
+        tituloLista.textContent = "Curiosidades sobre as Cataratas";
+        tituloLista.style.color = "#1c5e43";
+        main.appendChild(tituloLista);
+
+        const lista = document.createElement("ul");
+        lista.style.display = "inline-block";
+        lista.style.textAlign = "left";
+
+        const curiosidades = [
+            "Ficam localizadas em Foz do Iguaçu, Paraná.",
+            "São formadas por centenas de quedas d'água.",
+            "São consideradas Patrimônio Natural da Humanidade.",
+            "Recebem visitantes de vários países."
+        ];
+
+        curiosidades.forEach(function(texto) {
+            const item = document.createElement("li");
+            item.textContent = texto;
+            item.style.margin = "10px";
+            lista.appendChild(item);
+        });
+
+        main.appendChild(lista);
+
+        // CRIAR UM RODAPÉ
+        const rodape = document.createElement("footer");
+        rodape.textContent = "Beleza Natural do Paraná - Conheça nossas maravilhas!";
+        rodape.style.backgroundColor = "#1b5e20";
+        rodape.style.color = "white";
+        rodape.style.padding = "20px";
+        rodape.style.textAlign = "center";
+        rodape.style.marginTop = "20px";
+
+        body.appendChild(rodape);
+
+        // MODIFICAR O MENU
+        const links = document.querySelectorAll("nav a");
+
+        links.forEach(function(link) {
+            link.style.color = "#1b5e20";
+            link.style.margin = "15px";
+            link.style.textDecoration = "none";
+            link.style.fontWeight = "bold";
+        });
+
+    </script>
+
+</body>
+</html>
